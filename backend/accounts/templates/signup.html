@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - MediLearn AI</title>
+  </head>
+  <body>
+    <h1>Create Your Account</h1>
+    <p>Join MediLearn AI and start learning</p>
+
+    <form method="POST">
+      {% csrf_token %}
+
+      <label>Full Name</label><br />
+      <input
+        type="text"
+        name="fullname"
+        placeholder="Enter your full name"
+      /><br /><br />
+
+      <label>Email</label><br />
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter your email"
+      /><br /><br />
+
+      <label>Password</label><br />
+      <input
+        type="password"
+        name="password"
+        placeholder="Create a password"
+      /><br /><br />
+
+      <label>Confirm Password</label><br />
+      <input
+        type="password"
+        name="confirm_password"
+        placeholder="Confirm your password"
+      /><br /><br />
+
+      <button type="submit">Create Account</button>
+
+      <p>
+        Already have an account?
+        <a href="{% url 'login' %}">Login</a>
+      </p>
+    </form>
+  </body>
+</html>
