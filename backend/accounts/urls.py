@@ -1,3 +1,4 @@
+from django.contrib.auth import views as auth_views
 from django.urls import path
 from . import views
 
@@ -10,6 +11,11 @@ urlpatterns = [
 
     # Authentication
     path("login/", views.login_view, name="login"),
+    path(
+    "password-reset/",
+    auth_views.PasswordResetView.as_view(),
+    name="password_reset"
+     ),
 
     path("signup/", views.signup_view, name="signup"),
 

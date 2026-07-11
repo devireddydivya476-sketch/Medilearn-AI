@@ -8,6 +8,7 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
+
   <body>
     <div class="login-container">
       <div class="login-box">
@@ -18,11 +19,11 @@
         <form method="POST">
           {% csrf_token %}
 
-          <label>Username</label><br />
+          <label>Email</label><br />
           <input
-            type="text"
-            name="username"
-            placeholder="Enter your username"
+            type="email"
+            name="email"
+            placeholder="Enter your email"
             required
           /><br /><br />
 
@@ -36,7 +37,7 @@
 
           <button type="submit">Login</button>
         </form>
-
+        <p>😂 <a href="{% url 'password_reset' %}">Marchipoyyava?</a></p>
         {% if error %}
         <p style="color: red">{{ error }}</p>
         {% endif %}
